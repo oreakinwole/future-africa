@@ -1,6 +1,6 @@
 // import cookie from 'cookie'
 export const state = () => ({
-  correctAnswers: 1,
+  totalCorrectAnswers: 1,
   totalQuestions: 4
 })
 
