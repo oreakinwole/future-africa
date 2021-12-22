@@ -1,0 +1,28 @@
+{
+  "mcqQuestions": [
+    {
+      "question": "Which of the following isn't a JSON type ? ",
+      "options": ["Sring", "Date", "Array"],
+      "correctAnswer": "String"
+    },
+    {
+      "question": "Which is the file extension of JSON ?",
+      "options": ["jsn", "json", "jn"],
+      "correctAnswer": "json"
+    },
+    {
+      "question": "Does whitespace matter in JSON ?",
+      "options": [
+        "No, it will be stripped out.",
+        "Yes, both inside and outside of strings",
+        "Yes, only within strings"
+      ],
+      "correctAnswer": "Yes, only within strings"
+    },
+    {
+      "question": "Who is the creator of JSON ?",
+      "options": ["Sergey Brin", "Douglas Crockford", "Liam Crockford"],
+      "correctAnswer": "Douglas Crockford"
+    }
+  ]
+}
