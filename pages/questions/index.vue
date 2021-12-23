@@ -31,36 +31,12 @@
 </template>
 
 <script>
+import MCQuestions from '~/assets/allMcq.json'
 export default {
   name: 'QuestionsPage',
   data() {
     return {
-      testMcq: [
-        {
-          question: "Which of the following isn't a JSON type ? ",
-          options: ['String', 'Date', 'Array'],
-          correctAnswer: 'String',
-        },
-        {
-          question: 'Which is the file extension of JSON ?',
-          options: ['jsn', 'json', 'jn'],
-          correctAnswer: 'json',
-        },
-        {
-          question: 'Does whitespace matter in JSON ?',
-          options: [
-            'No, it will be stripped out.',
-            'Yes, both inside and outside of strings',
-            'Yes, only within strings',
-          ],
-          correctAnswer: 'Yes, only within strings',
-        },
-        {
-          question: 'Who is the creator of JSON ?',
-          options: ['Sergey Brin', 'Douglas Crockford', 'Liam Crockford'],
-          correctAnswer: 'Douglas Crockford',
-        },
-      ],
+      testMcq: [],
 
       indexToAnswer: {},
       totalCorrectAnswers: 0,
@@ -76,9 +52,9 @@ export default {
     },
   },
 
-  created() {
+  async created() {
     this.isQuestionsLoading = true
-    // await this.loadQuestions()
+    await this.loadQuestions()
 
     // populate indexToAnswer object to have all the index keys of the Questions Array
     this.testMcq.forEach((_, idx) => {
@@ -89,7 +65,17 @@ export default {
   },
 
   methods: {
-    // async loadQuestions() {},
+    async loadQuestions() {
+      const fetch = (mockData, time = 100) => {
+        return new Promise((resolve) => {
+          setTimeout(() => {
+            resolve(mockData)
+          }, time)
+        })
+      }
+
+      this.testMcq = await fetch(MCQuestions);
+    },
 
     handleSubmit() {
       const isNotAllAnswered = Object.values(this.indexToAnswer).includes(
@@ -119,7 +105,7 @@ export default {
         totalQuestions: this.totalQuestions,
       })
 
-      this.$router.push({path: '/result'})
+      this.$router.push({ path: '/result' })
     },
 
     indicateNotAnswered() {
