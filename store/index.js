@@ -5,8 +5,9 @@ export const state = () => ({
 })
 
 export const mutations = {
-  SET_RESULT(state, payload) {
-    state = payload
+  SET_RESULT(state, {totalCorrectAnswers, totalQuestions}) {
+    state.totalCorrectAnswers = totalCorrectAnswers
+    state.totalQuestions = totalQuestions
   },
 }
 

@@ -17,11 +17,11 @@ export default {
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
   },
 
-   // Global CSS: https://go.nuxtjs.dev/config-css
-   css: ['~/scss/app.scss'],
-   styleResources: {
-     scss: ['~/scss/_variables.scss'],
-   },
+  // Global CSS: https://go.nuxtjs.dev/config-css
+  css: ['~/scss/app.scss'],
+  styleResources: {
+    scss: ['~/scss/_variables.scss'],
+  },
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,

@@ -1,7 +1,7 @@
 <template>
   <div class="m-auto">
     <p>Your answers were submitted successfully</p>
-    <span>Your score: {{ finalResult.correctAnswers }} / {{ totalQuestions }} </span>
+    <span>Your score: <span class="text-secondary">{{ finalResult.totalCorrectAnswers }} / {{ finalResult.totalQuestions }}</span> </span>
   </div>
 </template>
 
